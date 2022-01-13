@@ -1,324 +1,1429 @@
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
 xmlns:x="urn:schemas-microsoft-com:office:excel"
 xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
-<meta name="Excel Workbook Frameset">
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <meta name=ProgId content=Excel.Sheet>
 <meta name=Generator content="Microsoft Excel 15">
 <link rel=File-List href="index_files/filelist.xml">
-<![if !supportTabStrip]>
-<link id="shLink" href="index_files/sheet001.html">
-
-<link id="shLink">
-
-<script language="JavaScript">
-<!--
- var c_lTabs=1;
-
- var c_rgszSh=new Array(c_lTabs);
- c_rgszSh[0] = "index";
-
-
-
- var c_rgszClr=new Array(8);
- c_rgszClr[0]="window";
- c_rgszClr[1]="buttonface";
- c_rgszClr[2]="windowframe";
- c_rgszClr[3]="windowtext";
- c_rgszClr[4]="threedlightshadow";
- c_rgszClr[5]="threedhighlight";
- c_rgszClr[6]="threeddarkshadow";
- c_rgszClr[7]="threedshadow";
-
- var g_iShCur;
- var g_rglTabX=new Array(c_lTabs);
-
-function fnGetIEVer()
-{
- var ua=window.navigator.userAgent
- var msie=ua.indexOf("MSIE")
- if (msie>0 && window.navigator.platform=="Win32")
-  return parseInt(ua.substring(msie+5,ua.indexOf(".", msie)));
- else
-  return 0;
-}
-
-function fnBuildFrameset()
-{
- var szHTML="<frameset rows=\"*,18\" border=0 width=0 frameborder=no framespacing=0>"+
-  "<frame src=\""+document.all.item("shLink")[0].href+"\" name=\"frSheet\" noresize>"+
-  "<frameset cols=\"54,*\" border=0 width=0 frameborder=no framespacing=0>"+
-  "<frame src=\"\" name=\"frScroll\" marginwidth=0 marginheight=0 scrolling=no>"+
-  "<frame src=\"\" name=\"frTabs\" marginwidth=0 marginheight=0 scrolling=no>"+
-  "</frameset></frameset><plaintext>";
-
- with (document) {
-  open("text/html","replace");
-  write(szHTML);
-  close();
- }
-
- fnBuildTabStrip();
-}
-
-function fnBuildTabStrip()
-{
- var szHTML=
-  "<html><head><style>.clScroll {font:8pt Courier New;color:"+c_rgszClr[6]+";cursor:default;line-height:10pt;}"+
-  ".clScroll2 {font:10pt Arial;color:"+c_rgszClr[6]+";cursor:default;line-height:11pt;}</style></head>"+
-  "<body onclick=\"event.returnValue=false;\" ondragstart=\"event.returnValue=false;\" onselectstart=\"event.returnValue=false;\" bgcolor="+c_rgszClr[4]+" topmargin=0 leftmargin=0><table cellpadding=0 cellspacing=0 width=100%>"+
-  "<tr><td colspan=6 height=1 bgcolor="+c_rgszClr[2]+"></td></tr>"+
-  "<tr><td style=\"font:1pt\">&nbsp;<td>"+
-  "<td valign=top id=tdScroll class=\"clScroll\" onclick=\"parent.fnFastScrollTabs(0);\" onmouseover=\"parent.fnMouseOverScroll(0);\" onmouseout=\"parent.fnMouseOutScroll(0);\"><a>&#171;</a></td>"+
-  "<td valign=top id=tdScroll class=\"clScroll2\" onclick=\"parent.fnScrollTabs(0);\" ondblclick=\"parent.fnScrollTabs(0);\" onmouseover=\"parent.fnMouseOverScroll(1);\" onmouseout=\"parent.fnMouseOutScroll(1);\"><a>&lt</a></td>"+
-  "<td valign=top id=tdScroll class=\"clScroll2\" onclick=\"parent.fnScrollTabs(1);\" ondblclick=\"parent.fnScrollTabs(1);\" onmouseover=\"parent.fnMouseOverScroll(2);\" onmouseout=\"parent.fnMouseOutScroll(2);\"><a>&gt</a></td>"+
-  "<td valign=top id=tdScroll class=\"clScroll\" onclick=\"parent.fnFastScrollTabs(1);\" onmouseover=\"parent.fnMouseOverScroll(3);\" onmouseout=\"parent.fnMouseOutScroll(3);\"><a>&#187;</a></td>"+
-  "<td style=\"font:1pt\">&nbsp;<td></tr></table></body></html>";
-
- with (frames['frScroll'].document) {
-  open("text/html","replace");
-  write(szHTML);
-  close();
- }
-
- szHTML =
-  "<html><head>"+
-  "<style>A:link,A:visited,A:active {text-decoration:none;"+"color:"+c_rgszClr[3]+";}"+
-  ".clTab {cursor:hand;background:"+c_rgszClr[1]+";font:9pt Arial;padding-left:3px;padding-right:3px;text-align:center;}"+
-  ".clBorder {background:"+c_rgszClr[2]+";font:1pt;}"+
-  "</style></head><body onload=\"parent.fnInit();\" onselectstart=\"event.returnValue=false;\" ondragstart=\"event.returnValue=false;\" bgcolor="+c_rgszClr[4]+
-  " topmargin=0 leftmargin=0><table id=tbTabs cellpadding=0 cellspacing=0>";
-
- var iCellCount=(c_lTabs+1)*2;
-
- var i;
- for (i=0;i<iCellCount;i+=2)
-  szHTML+="<col width=1><col>";
-
- var iRow;
- for (iRow=0;iRow<6;iRow++) {
-
-  szHTML+="<tr>";
-
-  if (iRow==5)
-   szHTML+="<td colspan="+iCellCount+"></td>";
-  else {
-   if (iRow==0) {
-    for(i=0;i<iCellCount;i++)
-     szHTML+="<td height=1 class=\"clBorder\"></td>";
-   } else if (iRow==1) {
-    for(i=0;i<c_lTabs;i++) {
-     szHTML+="<td height=1 nowrap class=\"clBorder\">&nbsp;</td>";
-     szHTML+=
-      "<td id=tdTab height=1 nowrap class=\"clTab\" onmouseover=\"parent.fnMouseOverTab("+i+");\" onmouseout=\"parent.fnMouseOutTab("+i+");\">"+
-      "<a href=\""+document.all.item("shLink")[i].href+"\" target=\"frSheet\" id=aTab>&nbsp;"+c_rgszSh[i]+"&nbsp;</a></td>";
-    }
-    szHTML+="<td id=tdTab height=1 nowrap class=\"clBorder\"><a id=aTab>&nbsp;</a></td><td width=100%></td>";
-   } else if (iRow==2) {
-    for (i=0;i<c_lTabs;i++)
-     szHTML+="<td height=1></td><td height=1 class=\"clBorder\"></td>";
-    szHTML+="<td height=1></td><td height=1></td>";
-   } else if (iRow==3) {
-    for (i=0;i<iCellCount;i++)
-     szHTML+="<td height=1></td>";
-   } else if (iRow==4) {
-    for (i=0;i<c_lTabs;i++)
-     szHTML+="<td height=1 width=1></td><td height=1></td>";
-    szHTML+="<td height=1 width=1></td><td></td>";
-   }
-  }
-  szHTML+="</tr>";
- }
-
- szHTML+="</table></body></html>";
- with (frames['frTabs'].document) {
-  open("text/html","replace");
-  charset=document.charset;
-  write(szHTML);
-  close();
- }
-}
-
-function fnInit()
-{
- g_rglTabX[0]=0;
- var i;
- for (i=1;i<=c_lTabs;i++)
-  with (frames['frTabs'].document.all.tbTabs.rows[1].cells[fnTabToCol(i-1)])
-   g_rglTabX[i]=offsetLeft+offsetWidth-6;
-}
-
-function fnTabToCol(iTab)
-{
- return 2*iTab+1;
-}
-
-function fnNextTab(fDir)
-{
- var iNextTab=-1;
- var i;
-
- with (frames['frTabs'].document.body) {
-  if (fDir==0) {
-   if (scrollLeft>0) {
-    for (i=0;i<c_lTabs&&g_rglTabX[i]<scrollLeft;i++);
-    if (i<c_lTabs)
-     iNextTab=i-1;
-   }
-  } else {
-   if (g_rglTabX[c_lTabs]+6>offsetWidth+scrollLeft) {
-    for (i=0;i<c_lTabs&&g_rglTabX[i]<=scrollLeft;i++);
-    if (i<c_lTabs)
-     iNextTab=i;
-   }
-  }
- }
- return iNextTab;
-}
-
-function fnScrollTabs(fDir)
-{
- var iNextTab=fnNextTab(fDir);
-
- if (iNextTab>=0) {
-  frames['frTabs'].scroll(g_rglTabX[iNextTab],0);
-  return true;
- } else
-  return false;
-}
-
-function fnFastScrollTabs(fDir)
-{
- if (c_lTabs>16)
-  frames['frTabs'].scroll(g_rglTabX[fDir?c_lTabs-1:0],0);
- else
-  if (fnScrollTabs(fDir)>0) window.setTimeout("fnFastScrollTabs("+fDir+");",5);
-}
-
-function fnSetTabProps(iTab,fActive)
-{
- var iCol=fnTabToCol(iTab);
- var i;
-
- if (iTab>=0) {
-  with (frames['frTabs'].document.all) {
-   with (tbTabs) {
-    for (i=0;i<=4;i++) {
-     with (rows[i]) {
-      if (i==0)
-       cells[iCol].style.background=c_rgszClr[fActive?0:2];
-      else if (i>0 && i<4) {
-       if (fActive) {
-        cells[iCol-1].style.background=c_rgszClr[2];
-        cells[iCol].style.background=c_rgszClr[0];
-        cells[iCol+1].style.background=c_rgszClr[2];
-       } else {
-        if (i==1) {
-         cells[iCol-1].style.background=c_rgszClr[2];
-         cells[iCol].style.background=c_rgszClr[1];
-         cells[iCol+1].style.background=c_rgszClr[2];
-        } else {
-         cells[iCol-1].style.background=c_rgszClr[4];
-         cells[iCol].style.background=c_rgszClr[(i==2)?2:4];
-         cells[iCol+1].style.background=c_rgszClr[4];
-        }
-       }
-      } else
-       cells[iCol].style.background=c_rgszClr[fActive?2:4];
-     }
-    }
-   }
-   with (aTab[iTab].style) {
-    cursor=(fActive?"default":"hand");
-    color=c_rgszClr[3];
-   }
-  }
- }
-}
-
-function fnMouseOverScroll(iCtl)
-{
- frames['frScroll'].document.all.tdScroll[iCtl].style.color=c_rgszClr[7];
-}
-
-function fnMouseOutScroll(iCtl)
-{
- frames['frScroll'].document.all.tdScroll[iCtl].style.color=c_rgszClr[6];
-}
-
-function fnMouseOverTab(iTab)
-{
- if (iTab!=g_iShCur) {
-  var iCol=fnTabToCol(iTab);
-  with (frames['frTabs'].document.all) {
-   tdTab[iTab].style.background=c_rgszClr[5];
-  }
- }
-}
-
-function fnMouseOutTab(iTab)
-{
- if (iTab>=0) {
-  var elFrom=frames['frTabs'].event.srcElement;
-  var elTo=frames['frTabs'].event.toElement;
-
-  if ((!elTo) ||
-   (elFrom.tagName==elTo.tagName) ||
-   (elTo.tagName=="A" && elTo.parentElement!=elFrom) ||
-   (elFrom.tagName=="A" && elFrom.parentElement!=elTo)) {
-
-   if (iTab!=g_iShCur) {
-    with (frames['frTabs'].document.all) {
-     tdTab[iTab].style.background=c_rgszClr[1];
-    }
-   }
-  }
- }
-}
-
-function fnSetActiveSheet(iSh)
-{
- if (iSh!=g_iShCur) {
-  fnSetTabProps(g_iShCur,false);
-  fnSetTabProps(iSh,true);
-  g_iShCur=iSh;
- }
-}
-
- window.g_iIEVer=fnGetIEVer();
- if (window.g_iIEVer>=4)
-  fnBuildFrameset();
-//-->
-</script>
-<![endif]><!--[if gte mso 9]><xml>
- <x:ExcelWorkbook>
-  <x:ExcelWorksheets>
-   <x:ExcelWorksheet>
-    <x:Name>index</x:Name>
-    <x:WorksheetSource HRef="index_files/sheet001.html"/>
-   </x:ExcelWorksheet>
-  </x:ExcelWorksheets>
-  <x:Stylesheet HRef="index_files/stylesheet.css"/>
-  <x:WindowHeight>5556</x:WindowHeight>
-  <x:WindowWidth>17256</x:WindowWidth>
-  <x:WindowTopX>32767</x:WindowTopX>
-  <x:WindowTopY>32767</x:WindowTopY>
-  <x:ProtectStructure>False</x:ProtectStructure>
-  <x:ProtectWindows>False</x:ProtectWindows>
- </x:ExcelWorkbook>
-</xml><![endif]-->
+<style id="Class Schedule_LAG_2421_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.xl152421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl652421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl662421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl672421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl682421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl692421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl702421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"Short Time";
+	text-align:left;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl712421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl722421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl732421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl742421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"Short Time";
+	text-align:left;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl752421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl762421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl772421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl782421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:none;
+	border-right:1.0pt solid windowtext;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl792421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl802421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl812421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:16.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl822421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl832421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:16.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl842421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:16.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:1.0pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl852421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:16.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:1.0pt solid windowtext;
+	border-right:1.0pt solid black;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl862421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl872421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid black;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl882421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl892421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid black;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl902421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl912421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl922421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid black;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl932421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid black;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl942421
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid black;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl952421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl962421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid black;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl972421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid black;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl982421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid black;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl992421
+	{color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid black;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl1002421
+	{color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid black;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl1012421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:1.0pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl1022421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid black;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl1032421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:.5pt solid black;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+.xl1042421
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:top;
+	border-top:.5pt solid windowtext;
+	border-right:1.0pt solid black;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	padding-left:12px;
+	mso-char-indent-count:1;}
+-->
+</style>
 </head>
 
-<frameset rows="*,39" border=0 width=0 frameborder=no framespacing=0>
- <frame src="index_files/sheet001.html" name="frSheet">
- <frame src="index_files/tabstrip.html" name="frTabs" marginwidth=0 marginheight=0>
- <noframes>
-  <body>
-   <p>This page uses frames, but your browser doesn't support them.</p>
-  </body>
- </noframes>
-</frameset>
+<body>
+<!--[if !excel]>&nbsp;&nbsp;<![endif]-->
+<!--The following information was generated by Microsoft Excel's Publish as Web
+Page wizard.-->
+<!--If the same item is republished from Excel, all information between the DIV
+tags will be replaced.-->
+<!----------------------------->
+<!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
+<!----------------------------->
+
+<div id="Class Schedule_LAG_2421" align=center x:publishsource="Excel"><!--The following information was generated by Microsoft Excel's Publish as Web
+Page wizard.--><!--If the same item is republished from Excel, all information between the DIV
+tags will be replaced.--><!-----------------------------><!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD --><!----------------------------->
+
+<table border=0 cellpadding=0 cellspacing=0 width=654 style='border-collapse:
+ collapse;table-layout:fixed;width:490pt'>
+ <col width=58 style='mso-width-source:userset;mso-width-alt:2048;width:43pt'>
+ <col width=113 style='mso-width-source:userset;mso-width-alt:4010;width:85pt'>
+ <col width=305 style='mso-width-source:userset;mso-width-alt:10837;width:229pt'>
+ <col width=178 style='mso-width-source:userset;mso-width-alt:6314;width:133pt'>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td colspan=4 height=29 class=xl812421 width=654 style='height:21.75pt;
+  width:490pt'><!--The following information was generated by Microsoft Excel's Publish as Web
+Page wizard.--><!--If the same item is republished from Excel, all information between the DIV
+tags will be replaced.--><!-----------------------------><!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD --><!----------------------------->Family
+  History Discovery Day Schedule</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl662421 style='height:15.75pt'>Time</td>
+  <td class=xl682421>Class Room</td>
+  <td class=xl682421>Topic</td>
+  <td class=xl692421>Teacher</td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl702421 style='height:30.0pt'>10:00</td>
+  <td class=xl712421>A</td>
+  <td class=xl722421 width=305 style='width:229pt'>Using TribalPage.com to help
+  you build, maintain and share your Family Tree online</td>
+  <td class=xl732421>Scott Duncan</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>10:00</td>
+  <td class=xl712421>B</td>
+  <td class=xl722421 width=305 style='width:229pt'>FamilySearch Partner Site's
+  Overview</td>
+  <td class=xl732421>Larry Gesell</td>
+ </tr>
+ <tr height=60 style='mso-height-source:userset;height:45.0pt'>
+  <td height=60 class=xl702421 style='height:45.0pt'>10:00</td>
+  <td class=xl712421>C</td>
+  <td class=xl722421 width=305 style='width:229pt'>Introduction to Goldie May,
+  a fascinating program to serve you and your fellow indexers</td>
+  <td class=xl732421>Marc Ellsworth</td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl702421 style='height:30.0pt'>10:00</td>
+  <td class=xl712421>D</td>
+  <td class=xl722421 width=305 style='width:229pt'>Card System or &quot;An
+  Interview with Your Deceased Ancestors&quot;</td>
+  <td class=xl732421>Anna Price</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>10:00</td>
+  <td class=xl712421>E</td>
+  <td class=xl722421 width=305 style='width:229pt'>FamilySearch Activities</td>
+  <td class=xl732421>Camila &amp; Rebeca Lopez</td>
+ </tr>
+ <tr height=41 style='mso-height-source:userset;height:30.75pt'>
+  <td height=41 class=xl742421 style='height:30.75pt'>10:00</td>
+  <td class=xl672421>F</td>
+  <td class=xl752421 width=305 style='width:229pt'>Interview Questions and
+  Attaching Voice Recordings</td>
+  <td class=xl762421>Bishop Lopez &amp; Deacons</td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl702421 style='height:30.0pt'>10:30</td>
+  <td class=xl712421>A</td>
+  <td class=xl722421 width=305 style='width:229pt'>Using TribalPage.com to help
+  you build, maintain and share your Family Tree online</td>
+  <td class=xl732421>Scott Duncan</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>10:30</td>
+  <td class=xl712421>B</td>
+  <td class=xl722421 width=305 style='width:229pt'>FamilySearch Partner Site's
+  Overview</td>
+  <td class=xl732421>Larry Gesell</td>
+ </tr>
+ <tr height=60 style='mso-height-source:userset;height:45.0pt'>
+  <td height=60 class=xl702421 style='height:45.0pt'>10:30</td>
+  <td class=xl712421>C</td>
+  <td class=xl722421 width=305 style='width:229pt'>Introduction to Goldie May,
+  a fascinating program to serve you and your fellow indexers</td>
+  <td class=xl732421>Marc Ellsworth</td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl702421 style='height:30.0pt'>10:30</td>
+  <td class=xl712421>D</td>
+  <td class=xl722421 width=305 style='width:229pt'>Card System or &quot;An
+  Interview with Your Deceased Ancestors&quot;</td>
+  <td class=xl732421>Anna Price</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>10:30</td>
+  <td class=xl712421>E</td>
+  <td class=xl722421 width=305 style='width:229pt'>FamilySearch Activities</td>
+  <td class=xl732421>Camila &amp; Rebeca Lopez</td>
+ </tr>
+ <tr height=41 style='mso-height-source:userset;height:30.75pt'>
+  <td height=41 class=xl742421 style='height:30.75pt'>10:30</td>
+  <td class=xl672421>F</td>
+  <td class=xl752421 width=305 style='width:229pt'>Interview Questions and
+  Attaching Voice Recordings</td>
+  <td class=xl762421>Bishop Lopez &amp; Deacons</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>11:00</td>
+  <td class=xl712421>A</td>
+  <td class=xl722421 width=305 style='width:229pt'>Introduction to BYU's Record
+  Linking Lab</td>
+  <td class=xl732421>Lisa Gardner</td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl702421 style='height:30.0pt'>11:00</td>
+  <td class=xl712421>B</td>
+  <td class=xl722421 width=305 style='width:229pt'>How to Find and Enhance
+  Photos of Ancestors</td>
+  <td class=xl732421>Mark Gardner</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>11:00</td>
+  <td class=xl712421>C</td>
+  <td class=xl722421 width=305 style='width:229pt'>How to Index</td>
+  <td class=xl732421>Lori Layton</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>11:00</td>
+  <td class=xl712421>D</td>
+  <td class=xl722421 width=305 style='width:229pt'>Take A Name App</td>
+  <td class=xl732421>Ruth Pargeter</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>11:00</td>
+  <td class=xl712421>G</td>
+  <td class=xl722421 width=305 style='width:229pt'>Languages Indexing &amp;
+  Reviewing</td>
+  <td class=xl732421>Royce Peterson</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl742421 style='height:15.75pt'>11:00</td>
+  <td class=xl672421>F</td>
+  <td class=xl752421 width=305 style='width:229pt'>FamilySearch Records -
+  Behind the Scenes</td>
+  <td class=xl762421>Cathy &amp; Terry Lambson</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>11:30</td>
+  <td class=xl712421>A</td>
+  <td class=xl722421 width=305 style='width:229pt'>Introduction to BYU's Record
+  Linking Lab</td>
+  <td class=xl732421>Lisa Gardner</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl702421 style='height:15.75pt'>11:30</td>
+  <td class=xl712421>B</td>
+  <td class=xl722421 width=305 style='width:229pt'>How to Find and Enhance
+  Photos of Ancestors</td>
+  <td class=xl732421>Mark Gardner</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>11:30</td>
+  <td class=xl712421>C</td>
+  <td class=xl722421 width=305 style='width:229pt'>I Took A DNA Test, Now What?</td>
+  <td class=xl732421>Melissa Lopez</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>11:30</td>
+  <td class=xl712421>D</td>
+  <td class=xl722421 width=305 style='width:229pt'>Take A Name App</td>
+  <td class=xl732421>Ruth Pargeter</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>11:30</td>
+  <td class=xl712421>G</td>
+  <td class=xl722421 width=305 style='width:229pt'>Languages Indexing &amp;
+  Reviewing</td>
+  <td class=xl732421>Royce Peterson</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl742421 style='height:15.75pt'>11:30</td>
+  <td class=xl672421>F</td>
+  <td class=xl752421 width=305 style='width:229pt'>FamilySearch Memories App</td>
+  <td class=xl762421>Kerry Finlinson</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>12:00</td>
+  <td class=xl712421>Cultural Hall</td>
+  <td class=xl772421 width=305 style='width:229pt'>Lunch</td>
+  <td class=xl732421>&nbsp;</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>12:00</td>
+  <td class=xl712421>A</td>
+  <td class=xl722421 width=305 style='width:229pt'>How to Get Started With
+  FamilySeach</td>
+  <td class=xl732421>Patrick Wilder</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>12:00</td>
+  <td class=xl712421>B</td>
+  <td class=xl722421 width=305 style='width:229pt'>FamilySearch Memories App</td>
+  <td class=xl732421>Kerry Finlinson</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>12:30</td>
+  <td class=xl712421>Cultural Hall</td>
+  <td class=xl772421 width=305 style='width:229pt'>Lunch</td>
+  <td class=xl732421>&nbsp;</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>12:30</td>
+  <td class=xl712421>A</td>
+  <td class=xl722421 width=305 style='width:229pt'>FamilySearch Records -
+  Behind the Scenes</td>
+  <td class=xl732421>Cathy &amp; Terry Lambson</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl742421 style='height:15.75pt'>12:30</td>
+  <td class=xl672421>B</td>
+  <td class=xl752421 width=305 style='width:229pt'>How to Index</td>
+  <td class=xl782421 width=178 style='width:133pt'>Lori Layton</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>1:00</td>
+  <td class=xl712421>A</td>
+  <td class=xl722421 width=305 style='width:229pt'>An introduction to
+  Ancestry.com</td>
+  <td class=xl732421>Don Holm</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>1:00</td>
+  <td class=xl712421>B</td>
+  <td class=xl722421 width=305 style='width:229pt'>How to Get Started With
+  FamilySeach</td>
+  <td class=xl732421>Patrick Wilder</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>1:00</td>
+  <td class=xl712421>C</td>
+  <td class=xl722421 width=305 style='width:229pt'>Swedish Ancestry</td>
+  <td class=xl732421>Anna Wilder</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>1:00</td>
+  <td class=xl712421>D</td>
+  <td class=xl722421 width=305 style='width:229pt'>Non-traditional Family Trees
+  in FamilySearch</td>
+  <td class=xl732421>Elenna Chipman</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>1:00</td>
+  <td class=xl712421>E</td>
+  <td class=xl722421 width=305 style='width:229pt'>FamilySearch - Standardizing
+  Data Entries</td>
+  <td class=xl732421>Claudia Gesell</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl742421 style='height:15.75pt'>1:00</td>
+  <td class=xl672421>F</td>
+  <td class=xl752421 width=305 style='width:229pt'>Family History Fun For
+  Families</td>
+  <td class=xl762421>Tiffany Applegate</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>1:30</td>
+  <td class=xl712421>A</td>
+  <td class=xl722421 width=305 style='width:229pt'>An introduction to
+  Ancestry.com</td>
+  <td class=xl732421>Don Holm</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>1:30</td>
+  <td class=xl712421>B</td>
+  <td class=xl722421 width=305 style='width:229pt'>I Took A DNA Test, Now What?</td>
+  <td class=xl732421>Melissa Lopez</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>1:30</td>
+  <td class=xl712421>C</td>
+  <td class=xl722421 width=305 style='width:229pt'>Swedish Ancestry</td>
+  <td class=xl732421>Anna Wilder</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl702421 style='height:15.75pt'>1:30</td>
+  <td class=xl712421>D</td>
+  <td class=xl722421 width=305 style='width:229pt'>Non-traditional Family Trees
+  in FamilySearch</td>
+  <td class=xl732421>Elenna Chipman</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl702421 style='height:15.0pt'>1:30</td>
+  <td class=xl712421>E</td>
+  <td class=xl722421 width=305 style='width:229pt'>FamilySearch - Standardizing
+  Data Entries</td>
+  <td class=xl732421>Claudia Gesell</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl742421 style='height:15.75pt'>1:30</td>
+  <td class=xl672421>F</td>
+  <td class=xl752421 width=305 style='width:229pt'>Family History Fun For
+  Families</td>
+  <td class=xl762421>Tiffany Applegate</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td colspan=4 height=21 class=xl822421 style='height:15.75pt'>&nbsp;</td>
+ </tr>
+ <tr height=28 style='mso-height-source:userset;height:21.0pt'>
+  <td colspan=3 height=28 class=xl832421 style='border-right:1.0pt solid black;
+  height:21.0pt'>Class Room Location</td>
+  <td class=xl792421></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl802421 style='height:15.0pt'>A</td>
+  <td colspan=2 class=xl862421 style='border-right:1.0pt solid black;
+  border-left:none'>NW corner (RS room)</td>
+  <td class=xl792421></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl802421 style='height:15.0pt'>B</td>
+  <td colspan=2 class=xl862421 style='border-right:1.0pt solid black;
+  border-left:none'>NE corner (Primary room)</td>
+  <td class=xl792421></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl802421 style='height:15.0pt'>C</td>
+  <td colspan=2 class=xl862421 style='border-right:1.0pt solid black;
+  border-left:none'>Mid West (YM room)</td>
+  <td class=xl792421></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl802421 style='height:15.0pt'>D</td>
+  <td colspan=2 class=xl862421 style='border-right:1.0pt solid black;
+  border-left:none'>Mid West (YW room)</td>
+  <td class=xl792421></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl802421 style='height:15.0pt'>E</td>
+  <td colspan=2 class=xl862421 style='border-right:1.0pt solid black;
+  border-left:none'>SW corner (HC room)</td>
+  <td class=xl792421></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl802421 style='height:15.0pt'>F</td>
+  <td colspan=2 class=xl862421 style='border-right:1.0pt solid black;
+  border-left:none'>Mid East class room</td>
+  <td class=xl792421></td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl652421 style='height:15.75pt'>G</td>
+  <td colspan=2 class=xl882421 style='border-right:1.0pt solid black;
+  border-left:none'>Center room (chapel overflow)</td>
+  <td class=xl792421></td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td colspan=4 height=21 class=xl902421 style='height:15.75pt'>&nbsp;</td>
+ </tr>
+ <tr height=28 style='mso-height-source:userset;height:21.0pt'>
+  <td colspan=4 height=28 class=xl832421 style='border-right:1.0pt solid black;
+  height:21.0pt'>Class Description</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td colspan=2 height=20 class=xl912421 style='border-right:.5pt solid black;
+  height:15.0pt'>Title</td>
+  <td colspan=2 class=xl932421 style='border-right:1.0pt solid black;
+  border-left:none'>Description</td>
+ </tr>
+ <tr height=144 style='mso-height-source:userset;height:108.0pt'>
+  <td colspan=2 height=144 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:108.0pt;width:128pt'>Introduction to BYU's Record Linking Lab</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>Come and see how the Record Linking Lab is
+  developing and using powerful technology to increase the quality and coverage
+  of the Family Tree on FamilySearch. You will see a demonstration of volunteer
+  resources that are easy to use, such as automated indexing and customized
+  record hints, that will help you and other people build the Family Tree, as
+  well as find relatives who need temple ordinances performed.</td>
+ </tr>
+ <tr height=144 style='mso-height-source:userset;height:108.0pt'>
+  <td colspan=2 height=144 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:108.0pt;width:128pt'>How to Find and Enhance Photos of Ancestors</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>This class will help find possible photos of
+  ancestors who you have no photos of... at minimum a headstone photo or other
+  photos you are not aware of that might exist on Find a Grave. Also, how to
+  find possible school yearbook photos using Ancestry.com. Then take these
+  photos or any photo that you would like to enhance by making the photo
+  clearer, repair scratches, change photos to color using the tools from
+  MyHeritage.com.</td>
+ </tr>
+ <tr height=109 style='mso-height-source:userset;height:81.75pt'>
+  <td colspan=2 height=109 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:81.75pt;width:128pt'>Using TribalPage.com to help you build, maintain
+  and share your Family Tree online</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>Simple and easy to use charts and reports,
+  mapping and free newsletters customized for your family. A unique way to
+  preserve your genealogical discoveries, while at the same time sharing them
+  with an entire family. You can also use this TribalPage.com to create your
+  own personal family history book, or as a launching pad for missionary work.</td>
+ </tr>
+ <tr height=54 style='mso-height-source:userset;height:41.25pt'>
+  <td colspan=2 height=54 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:41.25pt;width:128pt'>Swedish Ancestry</td>
+  <td colspan=2 class=xl992421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>An overview of Swedish research. The records
+  currently available on family search and my heritage. As well as what's
+  available at the family history center. Also the Swedish Genealogical Word
+  List in the family search wiki.</td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td colspan=2 height=40 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:30.0pt;width:128pt'>How to Get Started With FamilySeach</td>
+  <td colspan=2 class=xl992421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>If you are new to family history and want to
+  know how to get started using FamilySearch, this class is for you.</td>
+ </tr>
+ <tr height=73 style='mso-height-source:userset;height:54.75pt'>
+  <td colspan=2 height=73 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:54.75pt;width:128pt'>Introduction to Goldie May, a fascinating program
+  to serve you and your fellow indexers</td>
+  <td colspan=2 class=xl992421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>Learn of a new concept in furthering family
+  data collection by taking US Censuses information and potentially matching it
+  to FamilySearch families. Censuses have been previously indexed, but not yet
+  matched to the individuals in FamilySearch. All records are typed making them
+  easy to read.</td>
+ </tr>
+ <tr height=85 style='mso-height-source:userset;height:63.75pt'>
+  <td colspan=2 height=85 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:63.75pt;width:128pt'>Family History Fun For Families</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>We will discuss ways to have fun with family
+  history and how to incorporate it into every day life. This is applicable
+  whether you have kids, grandkids, teenagers, or no kids. It's bringing names
+  and dates to life.</td>
+ </tr>
+ <tr height=45 style='mso-height-source:userset;height:33.75pt'>
+  <td colspan=2 height=45 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:33.75pt;width:128pt'>Card System or &quot;An Interview with Your
+  Deceased Ancestors&quot;</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>Look deeper to find possible ways to discover
+  work that is missing for your family.</td>
+ </tr>
+ <tr height=42 style='mso-height-source:userset;height:32.25pt'>
+  <td colspan=2 height=42 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:32.25pt;width:128pt'>I Took A DNA Test, Now What?</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>How to interpret your DNA results to find
+  possible ways to further your family line.</td>
+ </tr>
+ <tr height=44 style='mso-height-source:userset;height:33.0pt'>
+  <td colspan=2 height=44 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:33.0pt;width:128pt'>Take A Name App</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>Going to the temple? Learn how to use the 'Take
+  A Name' app on your mobile devices.</td>
+ </tr>
+ <tr height=60 style='mso-height-source:userset;height:45.0pt'>
+  <td colspan=2 height=60 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:45.0pt;width:128pt'>FamilySearch Activities</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>How to use FamilySearch's family activities in
+  a way that the whole family of any age can engage and discover creative ways
+  to learn about their family history.</td>
+ </tr>
+ <tr height=42 style='mso-height-source:userset;height:32.25pt'>
+  <td colspan=2 height=42 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:32.25pt;width:128pt'>Interview Questions and Attaching Voice
+  Recordings</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>Attaching voice recordings to FamilySearch and
+  questions to ask in an interview.</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td colspan=2 height=46 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:34.5pt;width:128pt'>Non-traditional Family Trees in FamilySearch</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>Learn how to edit your FamilySearch tree to
+  show non-traditional famiilies including: Step parents &amp; children, same
+  gender couples, etc.</td>
+ </tr>
+ <tr height=60 style='mso-height-source:userset;height:45.0pt'>
+  <td colspan=2 height=60 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:45.0pt;width:128pt'>Languages Indexing &amp; Reviewing</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>This class will focus on indexing in other
+  languages with emphasis on Romance languages. Also covered are: cultural
+  norms, caligraphy, guides, method sources and other helps.</td>
+ </tr>
+ <tr height=42 style='mso-height-source:userset;height:31.5pt'>
+  <td colspan=2 height=42 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:31.5pt;width:128pt'>An introduction to Ancestry.com</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>A basic introduction to Ancestry.com. Start a
+  new tree, using the green leaf hints. How to use time lines and gallery
+  photos.</td>
+ </tr>
+ <tr height=44 style='mso-height-source:userset;height:33.0pt'>
+  <td colspan=2 height=44 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:33.0pt;width:128pt'>FamilySearch Memories App</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>Learn how to attach documents such as photos
+  and histories into FamilySearch.</td>
+ </tr>
+ <tr height=61 style='mso-height-source:userset;height:45.75pt'>
+  <td colspan=2 height=61 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:45.75pt;width:128pt'>How to Index</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>To index, you type in information from
+  historical documents so they can be published and become searchable online.
+  Come learn how to participate in this vital effort to help people find their
+  family members.</td>
+ </tr>
+ <tr height=42 style='mso-height-source:userset;height:31.5pt'>
+  <td colspan=2 height=42 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:31.5pt;width:128pt'>FamilySearch Records - Behind the Scenes</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>How FamilySearch, with the support of Church
+  Service Missionaries, finds and prepares record for Indexing.</td>
+ </tr>
+ <tr height=78 style='mso-height-source:userset;height:58.5pt'>
+  <td colspan=2 height=78 class=xl952421 width=171 style='border-right:.5pt solid black;
+  height:58.5pt;width:128pt'>FamilySearch - Standardizing Data Entries</td>
+  <td colspan=2 class=xl972421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>This class will demonstrate how to properly
+  standardize names, dates, and places on the FamilySearch website. Using
+  standard formats for names, dates and places in Family Tree improves the
+  accuracy and searchability of the information you enter.</td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td colspan=2 height=40 class=xl1012421 width=171 style='border-right:.5pt solid black;
+  height:30.0pt;width:128pt'>FamilySearch Partner Site's Overview</td>
+  <td colspan=2 class=xl1032421 width=483 style='border-right:1.0pt solid black;
+  border-left:none;width:362pt'>An oral review with demonstration of the
+  FamilySearch partner sites, including history and advantages of each site.<!-----------------------------><!--END OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD--><!-----------------------------><!-----------------------------><!--END OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD--><!-----------------------------></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=58 style='width:43pt'></td>
+  <td width=113 style='width:85pt'></td>
+  <td width=305 style='width:229pt'></td>
+  <td width=178 style='width:133pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--END OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD-->
+<!----------------------------->
+</body>
+
 </html>
